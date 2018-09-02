@@ -1,0 +1,54 @@
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    box-sizing: border-box;
+}
+ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Webkit */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* IE 10  */
+
+/* Currently not supported in Opera but will be soon */
+    -o-user-select: none;
+    user-select: none;
+
+}
+ul.disabled {opacity: 0.45;}
+ul li {
+    list-style: none;
+    margin: 0;
+    float: left;
+    padding: 3px 8px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-left: 1px solid;
+    border-color: #bbb;
+    cursor: pointer;
+    height: 28px;
+    line-height: 22px;
+
+    background-color: white;
+    -webkit-transition: background-color 0.1s ease-in;
+    -moz-transition: background-color 0.1s ease-in;
+    -ms-transition: background-color 0.1s ease-in;
+    -o-transition: background-color 0.1s ease-in;
+    transition: background-color 0.1s ease-in;
+}
+ul li:hover {
+    background-color: #F2F1EF;
+}
+ul li:last-child {
+    border-right: 1px solid #bbb;
+}
+ul li.active {
+    background-color: #4183d7;
+    border-top-color: #4183d7;
+    border-bottom-color: #4183d7;
+    color: white;
+}

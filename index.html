@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="0.0.0/pro-javascript-pagination.css">
+    <style>
+        button,ul {margin-top: 5px;}
+        button {display: inline-block;}
+        ul {display: block;}
+    </style>
+</head>
+<body>
+    <button id="tst_1_btn">UPDATE</button>
+    <button id="tst_1_btn_dis">DISABLE</button>
+    <button id="tst_1_btn_enb">ENABLE</button>
+    <ul id="tst_1_ul"></ul>
+<script src="0.0.0/pro-javascript-pagination.js"></script>
+<script>
+    let pagination = new Pagination({
+            trgt : document.getElementById('tst_1_ul'),
+            state : {pg:1,per:200,total:650},
+            onChange : function(v1){
+                console.log(v1);
+            },
+
+        });
+    document.getElementById('tst_1_btn').addEventListener('click',function(){
+        pagination.update({pg:1,per:200,total:2200});
+    });
+    document.getElementById('tst_1_btn_dis').addEventListener('click',function(){
+        pagination.disable();
+    });
+    document.getElementById('tst_1_btn_enb').addEventListener('click',function(){
+        pagination.enable();
+    });
+
+</script>
+</body>
+</html>
