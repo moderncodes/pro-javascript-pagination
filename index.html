@@ -6,8 +6,8 @@
     <link rel="stylesheet" href="0.0.0/pro-javascript-pagination.css">
     <style>
         button,ul {margin-top: 5px;}
-        button {display: inline-block;}
-        ul {display: block;}
+        button,ul,span {display: inline-block;}
+        ul,span {width: 100%;}
     </style>
 </head>
 <body>
@@ -15,13 +15,16 @@
     <button id="tst_1_btn_dis">DISABLE</button>
     <button id="tst_1_btn_enb">ENABLE</button>
     <ul id="tst_1_ul"></ul>
+    <span id="tst_1_span">Log..</span>
 <script src="0.0.0/pro-javascript-pagination.js"></script>
 <script>
-    let pagination = new Pagination({
-            trgt : document.getElementById('tst_1_ul'),
+    let ulEl = document.getElementById('tst_1_ul'),
+        spanEl = document.getElementById('tst_1_span'),
+        pagination = new Pagination({
+            trgt : ulEl,
             state : {pg:1,per:200,total:650},
-            onChange : function(v1){
-                console.log(v1);
+            onChange : function(d){
+                spanEl.innerHTML = JSON.stringify(d);
             },
 
         });
